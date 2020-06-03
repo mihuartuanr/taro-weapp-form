@@ -1,0 +1,70 @@
+<view class="form-item">
+  <view class="form-ele-wrap {{'form-ele-wrap__' + metas.type}}" wx:if="{{metas.type == 'upload'}}">
+    <view class="avatar-wrap {{'avatar-wrap__' + (metas.shape || 'default')}} {{value ? '' : 'avatar-wrap__empty'}}">
+      <input hidden name="{{metas.name}}" value="{{value}}" type="text" />
+      <image class="form-ele ele-image" src="{{value}}" />
+    </view>
+    <view class="avatar-addon-wrap">
+      <view class="form-label">{{metas.label}}</view>
+      <van-uploader bind:after-read="afterUpload" accept="image">
+        <view class="avatar-action">{{metas.actionLabel}}</view>
+      </van-uploader>
+    </view>
+  </view>
+  <block wx:else>
+    <view class="form-desc-wrap">
+      <view wx:if="{{metas.label}}" class="form-label">
+        {{metas.label}}
+      </view>
+      <view wx:if="{{validateState && validateMessage}}" class="form-error">
+        <image class="icon" src="../../../public/images/icons/icon_error.png" /><text>{{validateMessage}}</text>
+      </view>
+    </view>
+    <view class="form-ele-wrap {{'form-ele-wrap__' + metas.type}} {{isFocus ? 'is-focus' : ''}} {{validateState == 'error' ? 'is-error' : ''}}">
+      <input
+        wx:if="{{metas.type == 'text' || metas.type == 'number' || metas.type == 'idcard' || metas.type == 'digit'}}"
+        name="{{metas.name}}"
+        type="{{metas.type}}"
+        value="{{value}}"
+        disabled="{{metas.config.disabled}}"
+        class="form-ele ele-text"
+        placeholder="{{metas.attrs.placeholder}}"
+        bindchange="changeValue"
+        bindinput="{{inputValidate}}"
+        bindblur="blurEle"
+        bindfocus="getFocus"
+      />
+      <textarea
+        wx:if="{{metas.type == 'textarea'}}"
+        name="{{metas.name}}"
+        value="{{value}}"
+        disabled="{{metas.config.disabled}}"
+        class="form-ele ele-textarea"
+        placeholder="{{metas.attrs.placeholder}}"
+        bindchange="changeValue"
+        bindinput="{{inputValidate}}"
+        bindblur="blurEle"
+        bindfocus="getFocus"
+      />
+      <checkbox-group
+        wx:if="{{metas.type == 'checkbox'}}"
+        name="{{metas.name}}"
+        class="form-ele ele-checkgroup"
+        bindchange="changeValue"
+        bindblur="blurEle"
+      >
+        <label class="checkbox-wrap" wx:for="{{metas.options}}" wx:key="value">
+          <view class="ele-checkbox-wrap">
+            <checkbox
+              disabled="{{metas.config.disabled}}"
+              class="ele-checkbox"
+              value="{{item.value}}"
+              checked="{{item.checked}}"
+            />
+          </view>
+          <view class="checkbox-label">{{item.label}}</view>
+        </label>
+      </checkbox-group>
+    </view>
+  </block>
+</view>

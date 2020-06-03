@@ -1,0 +1,30 @@
+.form {
+  display: block;
+
+  form-item::after {
+    content: '';
+    display: block;
+    height: 16px;
+  }
+
+  form-item:last-of-type::after {
+    height: 0;
+  }
+}
+.btn {
+  font-size: 16px;
+  border-radius: 6px;
+  height: 44px;
+  line-height: 44px;
+  border: 0;
+
+  &- {
+    &confirm {
+      color: #FFFFFF;
+      background-image: linear-gradient(180deg, #496AFF 0%, #496AFF 100%);
+    }
+    &disabled {
+      opacity: 0.5;
+    }
+  }
+}

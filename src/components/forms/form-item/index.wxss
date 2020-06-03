@@ -1,0 +1,135 @@
+.form-item {
+  color: #333;
+  font-size: 16px;
+}
+.form-desc-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.form-ele-wrap {
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 12px 16px;
+  line-height: 1;
+}
+.form-ele-wrap:focus {
+  color: #4969FF;
+  border-color: inherit;
+}
+.form-error{
+  color: #EE5E4A;
+  font-size: 12px;
+}
+.icon {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 4px;
+  margin-right: 4px;
+}
+.form-ele {
+  height: 20px;
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+}
+.form-ele-wrap__upload {
+  border: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.avatar-wrap {
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-right: 10px;
+  position: relative;
+}
+.avatar-wrap__empty {
+  border: 1px dashed #496AFF;
+}
+.avatar-wrap__empty::before,
+.avatar-wrap__empty::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  display: block;
+  width: 14px;
+  height: 2px;
+  background-color: #496AFF;
+  transform-origin: center center;
+}
+.avatar-wrap__empty::before {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.avatar-wrap__empty::after {
+  transform: translate(-50%, -50%);
+}
+.avatar-wrap__empty .form-ele {
+  display: none;
+}
+.avatar-wrap__default {
+  width: 80px;
+  height: 60px;
+}
+.avatar-wrap__circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.avatar-wrap__round {
+  width: 80px;
+  height: 60px;
+  border-radius: 6px;
+}
+.avatar-action {
+  color: #496AFF;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.form-ele.ele-image {
+  height: 100%;
+}
+.form-ele.ele-textarea {
+  height: 3em;
+}
+.form-ele.ele-checkgroup {
+  height: auto;
+}
+.checkbox-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.checkbox-wrap:last-of-type {
+  margin-bottom: 0;
+}
+.checkbox-label {
+  flex: 1;
+  line-height: 1.5;
+  text-align: justify;
+}
+.is-error {
+  color: #EE5E4A;
+  border-color: inherit;
+}
+.is-focus {
+  color: #4969FF;
+  border-color: inherit;
+}
+.is-success {
+
+}
+.is-required {
+
+}
