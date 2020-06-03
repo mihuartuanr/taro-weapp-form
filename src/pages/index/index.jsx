@@ -46,6 +46,30 @@ export default class Index extends Component {
         ]
       },
       {
+        label: '个人简介',
+        type: 'textarea',
+        name: 'introduce',
+        config: {
+          disabled: false,
+        },
+        attrs: {
+          placeholder: '输入个人简介以便让别人更了解自己',
+        },
+        rules: [
+          {
+            required: true,
+            message: '请填写',
+            trigger: 'blur'
+          },
+          {
+            min: 0,
+            max: 500,
+            message: '长度500个字符之内',
+            trigger: 'blur'
+          }
+        ]
+      },
+      {
         label: '手机号',
         type: 'number',
         name: 'telphone',

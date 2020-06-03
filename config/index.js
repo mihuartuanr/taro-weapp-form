@@ -2,7 +2,7 @@
   const path = require('path');
 
 const config = {
- projectName: 'innovation-week',
+ projectName: 'taro-weapp-form',
  date: '2020-4-10',
  designWidth: 375,
  deviceRatio: {
